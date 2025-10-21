@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Project management system for managing projects",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
-
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [
     "learning",
@@ -22,5 +22,8 @@
   "devDependencies": {
     "nodemon": "^3.1.10",
     "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }
