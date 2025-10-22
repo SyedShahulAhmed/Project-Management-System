@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
+import app from './app.js';
 dotenv.config();
 
+const port = process.env.PORT;
 
-console.log("Hello Backend ");
-let u = process.env.NAME;
-let p = process.env.PASSWORD;
-console.log(p);
-console.log(`Welcome, ${u}!`);
+app.listen(port, () => {
+  console.log(`Server Listening in on http://localhost:${port}`);
+});
