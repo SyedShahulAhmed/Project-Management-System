@@ -24,6 +24,13 @@ app.use(
   })
 );
 
+// Import the Routes
+
+import HealthCheckRoute from "./routes/healthcheck.routes.js"
+
+app.use("/api/v1/healthcheck",HealthCheckRoute)
+
+
 app.get('/', (req, res) => {
   res.send('This is a Express Server');
 });
