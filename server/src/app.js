@@ -27,8 +27,10 @@ app.use(
 // Import the Routes
 
 import HealthCheckRoute from './routes/healthcheck.routes.js';
+import authRoutes from "./routes/auth.routes.js"
 
 app.use('/api/v1/healthcheck', HealthCheckRoute);
+app.use('./api/v1/auth',authRoutes)
 
 app.get('/', (req, res) => {
   res.send('This is a Express Server');
