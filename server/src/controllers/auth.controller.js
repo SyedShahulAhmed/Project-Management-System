@@ -56,21 +56,15 @@ const registerUser = asyncHandler(async (req, res) => {
     ),
   });
 
-  const createdUser = User.findById(user._id).select("-password -refreshToken -emailVerificationToken -emailVerificationExpiry")
-  if(!createdUser) { 
-    throw new ApiError(504,"User registration error")
+  const createdUser = User.findById(user._id).select(
+    '-password -refreshToken -emailVerificationToken -emailVerificationExpiry'
+  );
+  if (!createdUser) {
+    throw new ApiError(504, 'User registration error');
   }
   return res
-  .status(204)
-  .json(
-    new ApiResponse(
-        200,
-        {user : createdUser},
-        "User Successfully created"
-    )
-  )
-
+    .status(204)
+    .json(new ApiResponse(200, { user: createdUser }, 'User Successfully created'));
 });
 
-
-export {registerUser}
+export { registerUser };
